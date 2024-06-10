@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Example') {
-            input {
-                message "Can we proceed?"
-                ok "Yes"
-                submitter "Ram"
-                parameters {
-                    string(name:'PERSON', defaultValue: 'Ram', description: 'Member')
-				}
-			}
+        stage('code-checkout') {
             steps {
-                echo "$PERSON, is proceeding..."
+                echo 'success'
+            }
+        stage('build') {
+            steps {
+                echo 'building success'
+            }
+        stage('Test') {
+            steps {
+                echo 'testing success'
             }
         }
     }
