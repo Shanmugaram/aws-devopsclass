@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Example') {
+            input {
+                message "Can we proceed?"
+                ok "Yes"
+                submitter "Ram"
+                parameters {
+                    string(name:'PERSON', defaultValue: 'Ram', description: 'Member')
+				}
+			}
+            steps {
+                echo "$PERSON, is proceeding..."
+            }
+        }
+    }
+}
